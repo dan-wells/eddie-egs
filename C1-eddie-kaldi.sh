@@ -16,7 +16,7 @@ source activate kaldi
 # let's work in SLP group space -- full set of Kaldi-related binaries can get big
 cd /exports/chss/eddie/ppls/groups/lel_hcrc_cstr_students/$YOUR_NAME
 
-git clone https:/github.com/kaldi-asr/kaldi
+git clone https://github.com/kaldi-asr/kaldi.git
 cd kaldi
 
 # following instructions in the file INSTALL
