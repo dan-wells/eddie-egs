@@ -32,14 +32,14 @@ conda config --add envs_dirs $CONDADIR/envs/
 conda config --add pkgs_dirs $CONDADIR/pkgs/
 
 ## make a conda environment
-conda create -n slptorch python=3.8
+conda create -n slptorch python=3.9
 source activate slptorch
 
 ## install things
 
 ## The default version of gcc is 4.8.5 (in /usr/bin/gcc) which is too old for some packages
 ## e.g. to get openSmile to work you'll need a more up to date version of gcc and g++
-conda install gcc_linux-64 gxx_linux-64
+conda install gcc_linux-64=8.4 gxx_linux-64=8.4
 conda install cmake
 
 ## make these the default C and C++ compilers: 
