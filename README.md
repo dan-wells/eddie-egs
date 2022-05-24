@@ -29,6 +29,7 @@ To get started:
 Then, pick your tools!
 
 - For FastPitch TTS, see `B1-eddie-nvidia-apex.sh` and `B2-eddie-fastpitch.sh`
+  * See `suggested_fastpitch_changes.md` for code changes to make FastPitch run more efficiently on Eddie
 - For Kaldi, see `C1-eddie-kaldi.sh`
 
 In general, it's a good idea to use interactive sessions when setting up your environment and testing code (especially on the GPU).
