@@ -34,3 +34,6 @@ module load htop
 
 # fix numpy import on head node (with limited cores available)
 export OPENBLAS_NUM_THREADS=1
+
+# set pip cache directory outside home dir
+export PIP_CACHE_DIR=$DS_HOME/pip
