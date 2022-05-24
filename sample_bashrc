@@ -1,0 +1,36 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+# (on Eddie, $USER expands to your UUN)
+YOUR_NAME=Firstname_Lastname  # replace
+export SCRATCH=/exports/eddie/scratch/$USER
+export DS_HOME=/exports/chss/eddie/ppls/groups/lel_hcrc_cstr_students/${USER}_${YOUR_NAME}
+
+# let qstat print long job names
+export SGE_LONG_JOB_NAMES=-1
+
+shopt -s direxpand
+
+alias gpu_usage='qstat -F gpus,gputype,mem_total -q gpu'
+alias set_cuda='source /exports/applications/support/set_cuda_visible_devices.sh'
+
+# access e.g. TMPDIR scratch disk in interactive login sessions
+# look up NODE and JOB_ID by running qstat
+function set_interactive_env() {
+  NODE=$1
+  JOB_ID=$2
+  source /var/spool/gridscheduler/execd/${NODE}/active_jobs/${JOB_ID}.1/environment
+}
+
+module load htop
+
+# fix numpy import on head node (with limited cores available)
+export OPENBLAS_NUM_THREADS=1
