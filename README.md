@@ -9,6 +9,7 @@ Recommended reading:
     - [Job submission](https://www.wiki.ed.ac.uk/display/ResearchServices/Job+Submission)
     - [GPUs](https://www.wiki.ed.ac.uk/display/ResearchServices/GPUs)
   - [`tmux` cheatsheet](https://tmuxcheatsheet.com/)
+  - [`git` cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
 Credit to [Catherine Lai](https://homepages.inf.ed.ac.uk/clai/) for original recipes:
 
