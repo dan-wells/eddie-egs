@@ -34,8 +34,12 @@ FP=$DS_HOME/FastPitches/PyTorch/SpeechSynthesis/FastPitch
 
 export OUTPUT_DIR=$SCRATCH/${JOB_NAME}_${JOB_ID}
 export DATASET_PATH=$SCRATCH/LJSpeech-1.1
-export TRAIN_FILELIST=$FP/filelists/ljs_audio_text_train_v3.txt
-export VAL_FILELIST=$FP/filelists/ljs_audio_text_val.txt
+# if running after A2-fastpitch-prepare-lj-data.sh and with
+# LOAD_PITCH_FROM_DISK=true below, use ljs_audio_pitch_text_*.txt files
+# which point to saved pitch contours. If extracting pitches from audio
+# online with PITCH_ONLINE_DIR set below, use ljs_audio_text_*.txt files
+export TRAIN_FILELIST=$FP/filelists/ljs_audio_pitch_text_train_v3.txt
+export VAL_FILELIST=$FP/filelists/ljs_audio_pitch_text_val.txt
 
 # metadata for wandb logging
 export PROJECT=fastpitches_eddie
