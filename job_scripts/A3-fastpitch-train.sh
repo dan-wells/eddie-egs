@@ -77,6 +77,10 @@ export LOAD_MEL_FROM_DISK=false  # something wrong with loading saved mels
 # or, cache extracted pitch contours to this dir during first epoch
 export PITCH_ONLINE_DIR=
 
+# don't run with torch.distributed.launch (leads to port conflicts with
+# other jobs on the same compute node)
+export DISTRIBUTED=' '
+
 cd $FP
 scripts/train.sh
 
